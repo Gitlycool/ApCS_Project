@@ -1,12 +1,15 @@
 import processing.core.PApplet;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class Game extends PApplet {
+
+    ArrayList<Player> playerList = new ArrayList<Player>();
     int Elixer;
+
     int time = 0;
-    Player player1 = new Player(3, 3, 1, 5,this);
-    Player player2 = new Player(5, 5, 2, 8,this);
+    Player player1 = new Player(1,3,4,5,this);
 
 
     public void settings() {
@@ -46,17 +49,19 @@ public class Game extends PApplet {
             System.out.println(Elixer);
             time = 0;
         }
-            player1.draw(this);
 
-            player2.draw(this);
+        if (key == 1) {
+            player1.keyIsPressed("1", this);
+        }
+        player1.draw(this);
+
 
 
     }
 
-    public void keyReleased(){
-        player1.handleKeyRelease(key,this);
-        player2.handleKeyRelease(key,this);
-    }
+/*    public void keyReleased(Player player){
+        player.handleKeyRelease(key,this);
+    }*/
 
     public static void main(String[] args) {
         PApplet.main("Game");

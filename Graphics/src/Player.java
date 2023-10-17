@@ -3,6 +3,10 @@ import processing.core.PApplet;
 public class Player {
     private int x;
     private int y;
+    private int x2;
+    private int y2;
+    private int x3;
+    private int y3;
    private int xSpeed;
     private int ySpeed;
    private int elixerValue;
@@ -20,30 +24,32 @@ public class Player {
     public void draw(PApplet window) {
         window.fill(0);
         window.ellipse(x, y, 50, 50);
+        window.ellipse(x2, y2, 50, 50);
+        window.ellipse(x3, y3, 50, 50);
     }
 
-    public void handleKeyRelease(char key, PApplet window) {
+    public void keyIsPressed(String key1, PApplet window) {
 
-        if (counter == 0) {
-            if (key == '1') {
+
+            if (key1 == "1") {
                 x = window.mouseX;
                 y = window.mouseY;
                 window.fill(0);
                 window.ellipse(x, y, 50, 50);
                 counter++;
             }
-            if (key == '2') {
-                x = window.mouseX;
-                y = window.mouseY;
+            if (key1 == "2") {
+                x2 = window.mouseX;
+                y2 = window.mouseY;
                 window.fill(255);
-                window.ellipse(x, y, 50, 50);
+                window.ellipse(x2, y2, 50, 50);
                 counter++;
             }
-            if (key == '3') {
+            if (key1 == "3") {
+                x3 = window.mouseX;
+                y3 = window.mouseY;
                 window.fill(0, 125, 125);
-                x = window.mouseX;
-                y = window.mouseY;
-                window.ellipse(x, y, 50, 50);
+                window.ellipse(x3, y3, 50, 50);
                 counter++;
             }
         }
@@ -52,5 +58,5 @@ public class Player {
 
 
     }*/
-    }
+
 }
